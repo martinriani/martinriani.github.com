@@ -1,0 +1,36 @@
+/* Tips:
+em ---- 700px / 16px(tamaño de fuente) = 43.75em
+rem
+*/
+
+
+/* Estilos globales */
+
+
+/* Estilos de utilidad */
+.container{
+  width: 60rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilos de componentes */
+.text-and-image{
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  align-items: center;
+  text-align: center;
+}
+
+.text-and-image .main-content{
+  flex-grow: 1;
+
+}
+
+@media(min-width:60rem){
+  .text-and-image{
+    flex-direction: row;
+    align-items: stretch;
+  }
+}

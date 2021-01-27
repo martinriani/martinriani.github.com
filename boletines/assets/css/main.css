@@ -1,0 +1,151 @@
+/*  Esto es un comentario en css  */
+
+html {
+  font-family: 'Nunito', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #297373;
+}
+a:hover {
+  opacity: 0.6;
+}
+a:focus {
+  background-color: #112D2D;
+}
+img{
+  max-width: 100%;
+}
+.title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.container {
+  background: #297373; /* Color solido de respaldo */
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  height: 100vh; /* vh : total del tamaño vertical*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  max-width: 960px;
+  width: 100%;
+  height: 80vh;
+  /* max-height: 500px;
+  width: 100%;
+  height: 100%; */
+  background-color: #FFF;
+  /* box-shadow: diferenciaHorizontal(obligatorio) diferenciaVertical(obligatorio) desenfoque amplitud color(obligatorio)*/
+  /*box-shadow: 0 3px 6px #000;*/
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 4px;
+  position: relative;
+  padding: 1em;
+  overflow: scroll;
+}
+.actions {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+.close {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #0B1E1E;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  color: white;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.paragraph {
+  line-height: 1.8em;
+  font-weight: 300;
+}
+.tabla {
+  width: 100%;
+  border-spacing: 0;
+
+}
+.tabla td, .tabla th {
+  padding: 1em;
+  text-align: left;
+}
+.tabla tr:nth-child(even) {
+  background-color: #E0F0F5;
+}
+.fa-star {
+  color: #F9A620;
+}
+.title-item {
+  /*border-bottom-style: solid;
+  border-width: 0.2em;
+  border-color: #297373;*/
+  border-bottom: solid 0.2em #297373;
+  padding-bottom: 1em;
+  /*Shorthand Properties:
+  padding: arriba derecha abajo izqierda (4 valores)
+  padding: arriba/derecha abajo/izqierda (2 valores)
+  padding: todosloslados (1 valor)*/
+  font-size: 2em;
+}
+.address {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #0B1E1E;
+  display: inline-block;
+  margin-top: 1em;
+}
+.position {
+  background-color: #297373;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-right: 0.5em;
+}
+.main-image {
+  float: left;
+  margin-right: 1em;
+  height: 250px;
+}
+
+td{
+  display: block;
+  width: 100%;
+}
+td:nth-of-type(1){
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #0B1E1E;
+}
+th{
+  display: none;
+}
+
+
+@media (min-height:550px) {
+  .content {
+    height: 500px;
+  }
+}
+
+@media (min-width:900px){
+  td{
+    width: auto;
+    display: table-cell;
+  }
+  td:nth-of-type(1){
+    font-size: 1em;
+  }
+  th{
+    display: table-cell;
+  }
+  .content {
+    padding: 1.8em;
+    overflow: auto;
+  }
+}
