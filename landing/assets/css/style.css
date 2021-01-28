@@ -3,15 +3,83 @@ em ---- 700px / 16px(tamaño de fuente) = 43.75em
 rem
 */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
+*{
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+}
+
+:root{
+  --yellow: #FFC93C;
+}
 /* Estilos globales */
-
+body{
+  font-family: 'DM Sans', sans-serif;
+}
 
 /* Estilos de utilidad */
 .container{
   width: 60rem;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.center-vertical-and-horizontal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title, h1{
+  font-size: 4rem;
+}
+
+.subtitle{
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.main-grid{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0,1fr));
+}
+
+.section-padding{
+  padding: 4.25rem 2rem;
+}
+
+.bg-yellow{
+  background-color: var(--yellow);
+}
+
+.bg-gray{
+  background-color: #E3E3E3;
+}
+
+
+/*.yellow-underline{
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+}*/
+
+.yellow-underline{
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.yellow-underline::before{
+  position: absolute;
+  content:'';
+  bottom: 0;
+  left: 0;
+  height: 0.56rem;
+  background-color: var(--yellow);
+  width: 100%;
+  z-index: -1;
 }
 
 /* Estilos de componentes */
@@ -23,14 +91,146 @@ rem
   text-align: center;
 }
 
-.text-and-image .main-content{
-  flex-grow: 1;
+.text-and-image.cover{
+  padding-bottom: 0;
+}
 
+.text-and-image .main-content{
+  display: grid;
+  gap: 3em;
+  flex-grow: 1;
+  grid-column-start: auto minmax(0,1fr) auto;
+  justify-items: center;
+}
+
+.text-and-image .main-content header{
+  flex-grow: 1;
+}
+
+.text-and-image .actions{
+  margin-bottom: 4.25em;
+}
+
+.avatar{
+  border-radius: 50%;
+  /* aspect-ratio: 1/1; flag: web experimental, web platform */
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  flex-basis: 350px;
+  align-self: center;
+}
+
+.items{
+  gap: 3em;
+}
+
+.items header{
+  grid-column: span 7;
+}
+
+.item header{
+  padding: 1.5em 2em;
+}
+
+.items .item{
+  background-color: white;
+  grid-column: span 7;
+}
+
+.item .background{
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-coffe{
+  border-radius: 0.5em;
+  width: 70em;
+}
+
+.actions{
+  display:  grid;
+  gap:1em;
+}
+button{
+  color: white;
+  padding: 1em;
+  width: 10em;
+  border-radius: 3em;
+}
+
+.boton-primario{
+  background-color:#0e51b3;
+}
+
+.boton-secundario{
+  background-color: #6a85ad;
 }
 
 @media(min-width:60rem){
+
+  .actions{
+    display: flex;
+    gap: 2em;
+  }
+
+  .main-grid{
+    grid-template-columns: repeat(12, minmax(0,1fr));
+  }
+  .items .item{
+    grid-column: span 4;
+  }
+  .items header{
+    grid-column: span 12;
+  }
+
+  .element-with-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+
+  .element-with-images:nth-child(even){
+    flex-direction: row-reverse;
+  }
+
+  .element-with-images .text{
+    flex: 1;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .element-with-images .images{
+    flex: 0 0 50%;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-rows: repeat(2,minmax(0,1fr));
+    grid-template-areas: ". right-image"
+                        "left-image .";
+  }
+
+  .element-with-images .images img:first-child{
+    grid-area: right-image;
+  }
+
+  .element-with-images .images img:last-child{
+    grid-area: left-image;
+  }
+
+  .text-and-image .text{
+    flex: 1;
+    text-align: left;
+  }
+  .text-and-image .main-content{
+    justify-items: start;
+    text-align: left;
+  }
+
   .text-and-image{
     flex-direction: row;
     align-items: stretch;
   }
+
 }
