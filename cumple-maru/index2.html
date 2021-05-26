@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feliz Cumple!!!</title>
+
+	<style type="text/css">
+		.particula {
+			width: 8px;
+			height: 8px;
+			background: black;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+		.particula[data-padre="false"] {
+			width: 5px;
+			height: 5px;
+		}
+
+		body, html {
+			overflow-y: hidden;
+			overflow-x: hidden;
+
+			background: black;
+		}
+		body{
+			display:  flex;
+		  align-items: center;
+		  justify-content: center;
+
+		}
+
+		h1{
+			 color:white;
+			 font-family: Segoe Script;
+			 font-weight: bold;
+			 margin-top: 3em;
+			 font-size: 3em;
+
+		}
+
+		.contenido{
+			position: relative;
+		  display: inline-block;
+		}
+/*
+		#fondo {
+			position: absolute;
+		    bottom: -100px;
+		    opacity: .4;
+		}*/
+	</style>
+</head>
+<body>
+	<!--div class="particula" data-velocidad-y="0" data-velocidad-x="0" data-padre="true" /-->
+	<div class="contenido">
+	<h1>¡¡¡FELIZ CUMPLEAÑOS!!!</h1>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/zW91NeqOaWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+<!--	<img src="fondo.png" id="fondo" /> -->
+	<script src="index2.js"></script>
+
+</body>
+</html>
